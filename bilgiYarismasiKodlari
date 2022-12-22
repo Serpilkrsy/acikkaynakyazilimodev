@@ -1,0 +1,173 @@
+namespace BilgiYarismasi
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        int soruNo = 0;
+        int dogruSayisi = 0;
+        int yanlisSayisi = 0;
+
+        private void btnSonraki_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            btnB.Enabled = true;
+            btnC.Enabled = true;
+            btnD.Enabled = true; ;
+            btnA.Enabled = true;
+            soruNo++;
+            lblSoruNo.Text = soruNo.ToString();
+            
+            if (soruNo == 1)
+            {
+                richTextBox1.Text = "Cumhuriyet kac yilinda ilan edilmistir?";
+                btnA.Text = "1920";
+                btnB.Text = "1921";
+                btnC.Text = "1922";
+                btnD.Text = "1923";
+                label1.Text = "1923";
+                btnSonraki.Enabled = false;
+
+
+            }
+            if (soruNo == 2)
+            {
+                richTextBox1.Text = "Hangi il Ege bolgesinde bulunmaz?";
+                btnA.Text = "Izmir";
+                btnB.Text = "Balikesir";
+                btnC.Text = "Aydin";
+                btnD.Text = "Manisa";
+                label1.Text = "Balikesir";
+                btnSonraki.Enabled = false;
+
+
+            }
+            if (soruNo == 3)
+            {
+                richTextBox1.Text = "Son Kuslar hangi yazarimiza aittir?";
+                btnA.Text = "Sait Faik";
+                btnB.Text = "Cemal Süreya";
+                btnC.Text = "Atilla İlhan";
+                btnD.Text = "Reşat Nuri";
+                label1.Text = "Sait Faik";
+                btnSonraki.Text = "sonuçlar: ";
+                btnSonraki.Enabled = false;
+
+            }
+            if (soruNo == 4)
+            {
+                btnB.Enabled = false;
+                btnC.Enabled = false;
+                btnD.Enabled = false;
+                btnA.Enabled = false;
+                pictureBox1.Visible = false;
+                pictureBox2.Visible = false;
+                btnSonraki.Enabled = false;
+                MessageBox.Show("dogru sayisi: " + dogruSayisi + "\n" +"yanlis sayisi: "+yanlisSayisi);
+            }
+
+        }
+
+        private void btnA_Click(object sender, EventArgs e)
+        {
+            btnSonraki.Enabled = true;
+
+            btnB.Enabled = false;
+            btnC.Enabled = false;
+            btnD.Enabled = false;
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            label2.Text = btnA.Text;
+            if (label2.Text == label1.Text)
+            {
+                dogruSayisi++;
+                lblDogru.Text = dogruSayisi.ToString();
+                pictureBox2.Visible = true;
+            }
+            else
+            {
+                yanlisSayisi++;
+                lblYanlis.Text = yanlisSayisi.ToString();
+                pictureBox1.Visible = true;
+            }
+        }
+
+        private void btnB_Click(object sender, EventArgs e)
+        {
+            btnSonraki.Enabled = true;
+
+            btnA.Enabled = false;
+            btnC.Enabled = false;
+            btnD.Enabled = false;
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            label2.Text = btnB.Text;
+            if (label2.Text == label1.Text)
+            {
+                dogruSayisi++;
+                lblDogru.Text = dogruSayisi.ToString();
+                pictureBox2.Visible = true;
+            }
+            else
+            {
+                yanlisSayisi++;
+                lblYanlis.Text = yanlisSayisi.ToString();
+                pictureBox1.Visible = true;
+            }
+        }
+
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            btnSonraki.Enabled = true;
+
+            btnB.Enabled = false;
+            btnA.Enabled = false;
+            btnD.Enabled = false;
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            label2.Text = btnC.Text;
+            if (label2.Text == label1.Text)
+            {
+                dogruSayisi++;
+                lblDogru.Text = dogruSayisi.ToString();
+                pictureBox2.Visible = true;
+
+            }
+            else
+            {
+                yanlisSayisi++;
+                lblYanlis.Text = yanlisSayisi.ToString();
+                pictureBox1.Visible = true;
+            }
+        }
+
+        private void btnD_Click(object sender, EventArgs e)
+        {
+            btnSonraki.Enabled = true;
+
+            btnB.Enabled = false;
+            btnC.Enabled = false;
+            btnA.Enabled = false;
+            pictureBox1.Visible = false;
+            pictureBox2.Visible = false;
+            label2.Text = btnD.Text;
+            if (label2.Text == label1.Text)
+            {
+                dogruSayisi++;
+                lblDogru.Text = dogruSayisi.ToString();
+                pictureBox2.Visible = true;
+
+            }
+            else
+            {
+                yanlisSayisi++;
+                lblYanlis.Text = yanlisSayisi.ToString();
+                pictureBox1.Visible = true;
+            }
+        }
+    }
+}
